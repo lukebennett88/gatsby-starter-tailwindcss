@@ -7,5 +7,4 @@
 // Self host fonts using Typefaces.js https://github.com/KyleAMathews/typefaces
 import 'typeface-inter';
 
-// Load CSS
 import './src/css/tailwind.css';

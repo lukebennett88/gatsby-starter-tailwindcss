@@ -1,4 +1,4 @@
 [
-  { "label": "Home", "href": "/" },
-  { "label": "Contact", "href": "/contact" }
+  { "label": "Home", "slug": "/" },
+  { "label": "Contact", "slug": "/contact" }
 ]

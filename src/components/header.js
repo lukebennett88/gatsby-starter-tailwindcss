@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
 
-import useGraphql from '../hooks/use-graphql';
+import { useGraphQL } from '../hooks';
 
-const Header = () => {
+export function Header() {
   const [isOpen, setOpen] = useState(false);
-  const { allSiteNavigationJson, site } = useGraphql();
+  const { allSiteNavigationJson, site } = useGraphQL();
   return (
     <header className="sticky top-0 w-screen mb-6 text-white bg-teal-600 shadow-md">
       <div className="flex items-center justify-between max-w-4xl px-4 py-6 mx-auto">
@@ -22,7 +22,7 @@ const Header = () => {
         {isOpen && (
           <nav className="fixed inset-0 z-40 flex items-center justify-center h-full text-3xl font-bold text-white bg-teal-600">
             <ul>
-              {allSiteNavigationJson.nodes.map(node => (
+              {allSiteNavigationJson.nodes.map((node) => (
                 <li key={node.id}>
                   <Link to={node.href} onClick={() => setOpen(false)}>
                     {node.label}
@@ -35,6 +35,4 @@ const Header = () => {
       </div>
     </header>
   );
-};
-
-export default Header;
+}

@@ -1,9 +1,4 @@
-import React from 'react';
-import Image from 'gatsby-image';
-
-import useGraphql from '../hooks/use-graphql';
-
-/*
+/**
  * This component is built using `gatsby-image` to automatically serve optimized
  * images with lazy loading and reduced file sizes. The image is loaded using a
  * `useStaticQuery`, which allows us to load the image from directly within this
@@ -14,10 +9,13 @@ import useGraphql from '../hooks/use-graphql';
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const PlaceholderImage = () => {
-  const { placeholderImage } = useGraphql();
+import React from 'react';
+import Image from 'gatsby-image';
+
+import { useGraphQL } from '../hooks';
+
+export function PlaceholderImage() {
+  const { placeholderImage } = useGraphQL();
 
   return <Image fluid={placeholderImage.childImageSharp.fluid} />;
-};
-
-export default PlaceholderImage;
+}

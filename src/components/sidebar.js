@@ -1,57 +1,29 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import logo from '../images/logo.svg';
-import {
-  HomeIcon,
-  UserGroupIcon,
-  FolderIcon,
-  CalendarIcon,
-  InboxIcon,
-  ChartIcon,
-} from './icons';
+import { Logo } from './vectors';
+import { useGraphQL } from '../hooks';
 
-const Sidebar = () => {
+export function Sidebar() {
+  const { allSiteNavigationJson } = useGraphQL();
   return (
     <div className="hidden md:flex md:flex-shrink-0">
       <div className="flex flex-col w-64 bg-gray-800">
         <div className="flex flex-col flex-1 h-0 pt-5 pb-4 overflow-y-auto">
           <Link to="/" className="flex items-center flex-shrink-0 px-4">
-            <img className="w-auto h-8 mr-3" src={logo} alt="Logo." />
+            <Logo className="w-auto h-8 mr-3 transition duration-150 ease-in-out rounded-full hover:bg-white" />
             <span className="font-medium text-white">Gatsby Starter</span>
           </Link>
           {/* <!-- Sidebar component, swap this element with another sidebar if you like --> */}
           <nav className="flex-1 px-2 mt-5 bg-gray-800">
-            {[
-              { id: 0, link: '/', label: 'Dashboard', icon: HomeIcon },
-              { id: 1, link: '/#', label: 'Team', icon: UserGroupIcon },
-              { id: 2, link: '/#', label: 'Projects', icon: FolderIcon },
-              {
-                id: 3,
-                link: '/#',
-                label: 'Calendar',
-                icon: CalendarIcon,
-              },
-              {
-                id: 4,
-                link: '/#',
-                label: 'Documents',
-                icon: InboxIcon,
-              },
-              {
-                id: 5,
-                link: '/#',
-                label: 'Reports',
-                icon: ChartIcon,
-              },
-            ].map(navItem => (
+            {allSiteNavigationJson.nodes.map((navItem) => (
               <Link
                 key={navItem.id}
                 to={navItem.link}
                 activeClassName="bg-gray-900"
                 className="flex items-center px-2 py-2 mt-1 text-sm font-medium leading-5 text-gray-300 transition duration-150 ease-in-out rounded-md group hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700"
               >
-                <navItem.icon className="w-6 h-6 mr-3 text-gray-300 transition duration-150 ease-in-out group-hover:text-gray-300 group-focus:text-gray-300" />
+                {/* <navItem.icon className="w-6 h-6 mr-3 text-gray-300 transition duration-150 ease-in-out group-hover:text-gray-300 group-focus:text-gray-300" /> */}
                 {navItem.label}
               </Link>
             ))}
@@ -84,6 +56,4 @@ const Sidebar = () => {
       </div>
     </div>
   );
-};
-
-export default Sidebar;
+}

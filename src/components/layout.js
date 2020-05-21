@@ -8,10 +8,10 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import MobileMenu from './mobile-menu';
-import Sidebar from './sidebar';
+import { MobileMenu } from './mobile-menu';
+import { Sidebar } from './sidebar';
 
-const Layout = ({ children }) => {
+export function Layout({ children }) {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   return (
     <div className="flex h-screen overflow-hidden bg-gray-100">
@@ -50,10 +50,8 @@ const Layout = ({ children }) => {
       </div>
     </div>
   );
-};
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 };
-
-export default Layout;

@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Input = ({
-  label,
-  name,
-  value,
-  required,
-  type = 'text',
+export function TextArea({
   autoComplete,
   handleChange,
-}) => {
+  label,
+  name,
+  required,
+  rows = 5,
+  value,
+}) {
   return (
     <fieldset>
       <label
@@ -18,28 +18,26 @@ const Input = ({
       >
         {label}
       </label>
-      <input
+      <textarea
         id={name}
         name={name}
         value={value}
+        rows={rows}
         required={required}
-        type={type}
         autoComplete={autoComplete}
         onChange={handleChange}
-        className="block w-full px-3 py-2 mt-1 transition duration-150 ease-in-out border border-gray-300 rounded-md shadow-sm form-input focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5"
+        className="block w-full px-3 py-2 mt-1 transition duration-150 ease-in-out border border-gray-300 rounded-md shadow-sm form-textarea focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5"
       />
     </fieldset>
   );
-};
+}
 
-Input.propTypes = {
+TextArea.propTypes = {
+  autoComplete: PropTypes.string,
+  handleChange: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   required: PropTypes.bool,
-  type: PropTypes.string,
+  rows: PropTypes.number,
   value: PropTypes.string.isRequired,
-  autoComplete: PropTypes.string,
-  handleChange: PropTypes.func.isRequired,
 };
-
-export default Input;

@@ -1,17 +1,10 @@
 import React from 'react';
-import { navigate } from 'gatsby';
 
-import Input from './input';
-import TextArea from './textarea';
+import { useForm } from '../hooks';
+import { Input, TextArea } from './form-elements';
 
-function encode(data) {
-  return Object.keys(data)
-    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
-    .join('&');
-}
-
-const ContactForm = () => {
-  const [state, setState] = React.useState({
+export function ContactForm() {
+  const { state, handleChange, Form } = useForm({
     first_name: '',
     last_name: '',
     email_address: '',
@@ -19,32 +12,8 @@ const ContactForm = () => {
     message: '',
   });
 
-  const handleChange = e =>
-    setState({ ...state, [e.target.name]: e.target.value });
-
-  const handleSubmit = e => {
-    e.preventDefault();
-    const form = e.target;
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({
-        'form-name': form.getAttribute('name'),
-        ...state,
-      }),
-    })
-      .then(() => navigate(form.getAttribute('action')))
-      .catch(error => alert(error));
-  };
-
   return (
-    <form
-      action="/success/"
-      data-netlify="true"
-      method="POST"
-      name="contact-form"
-      onSubmit={handleSubmit}
-    >
+    <Form action="/success/" name="contact-form">
       <div className="bg-gray-100">
         <div className="py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="px-4 py-5 mt-6 bg-white shadow sm:rounded-lg sm:p-6">
@@ -115,8 +84,6 @@ const ContactForm = () => {
           </div>
         </div>
       </div>
-    </form>
+    </Form>
   );
-};
-
-export default ContactForm;
+}

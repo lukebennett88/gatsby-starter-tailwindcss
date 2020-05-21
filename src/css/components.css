@@ -1,12 +1,4 @@
-/* These classes have lower specificity so we can override them
-   with utility classes */
-
-.highlight {
-  background-image: linear-gradient(
-    to bottom,
-    transparent 70%,
-    theme('colors.teal.200') 70%
-  );
-  color: theme('colors.teal.600');
-  @apply font-bold inline-block;
-}
+/**
+ * These classes have lower specificity so we can override them
+ * with utility classes
+ */

@@ -4,6 +4,7 @@
 // "error" or 2 - turn the rule on as an error (exit code will be 1)
 
 module.exports = {
+  root: true,
   extends: ['wesbos'],
   rules: {
     'arrow-body-style': 0,
