@@ -62,15 +62,11 @@ public
 .DS_Store
 
 # Yarn
-!.yarn/cache
-!.yarn/plugins
-!.yarn/releases
-.pnp.js
-.pnp/
-.yarn-integrity
-.yarn/*
-# Yarn Integrity file
 yarn-error.log
+.pnp/
+.pnp.js
+# Yarn Integrity file
+.yarn-integrity
 
 # Local Netlify folder
 .netlify
