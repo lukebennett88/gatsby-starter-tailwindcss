@@ -1,4 +1,4 @@
 [
   { "label": "Home", "slug": "/" },
-  { "label": "Contact", "slug": "/contact" }
+  { "label": "Contact", "slug": "/contact/" }
 ]
