@@ -49,12 +49,13 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
-    "build:serve": "npm run build && npm run serve",
+    "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
+    "build:serve": "yarn build && yarn serve",
+    "clean": "gatsby clean",
     "develop": "gatsby develop --host=0.0.0.0 --open",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "start": "npm run develop",
+    "start": "yarn develop",
     "serve": "gatsby serve --host=0.0.0.0 --open"
   }
 }
