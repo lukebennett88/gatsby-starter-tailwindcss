@@ -1,11 +1,6 @@
 import React from 'react';
-import { Link } from 'gatsby';
-
-import { Logo } from './vectors';
-import { useGraphQL } from '../hooks';
 
 export function Sidebar() {
-  const { allSiteNavigationJson } = useGraphQL();
   return (
     <div className="hidden lg:block">
       <aside className="sticky p-8 rounded-lg top-28 bg-gray-50">
