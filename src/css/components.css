@@ -7,3 +7,7 @@
 :root {
   --reach-dialog: 1;
 }
+
+body {
+  @apply bg-teal-500;
+}
