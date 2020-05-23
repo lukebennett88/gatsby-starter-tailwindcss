@@ -10,6 +10,7 @@ import PropTypes from 'prop-types';
 
 import { MobileMenu } from './mobile-menu';
 import { Sidebar } from './sidebar';
+import { Footer } from './footer';
 
 export function Layout({ children }) {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -47,7 +48,7 @@ export function Layout({ children }) {
             {children}
           </div>
         </main>
-      </div>
+      <Footer />
     </div>
   );
 }
