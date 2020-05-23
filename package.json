@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Luke Bennett <hello@lukebennett.com.au>",
   "dependencies": {
+    "@reach/dialog": "^0.10.3",
     "@tailwindcss/ui": "^0.3.0",
     "autoprefixer": "^9.8.0",
     "cssnano": "^4.1.10",
@@ -27,6 +28,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.0.0",
+    "react-spring": "^8.0.27",
     "tailwindcss": "^1.4.6",
     "typeface-inter": "^3.12.0"
   },
