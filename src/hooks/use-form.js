@@ -1,5 +1,4 @@
-import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { navigate } from 'gatsby';
 
 export function useForm(initialState) {
@@ -32,40 +31,5 @@ export function useForm(initialState) {
       .catch((error) => alert(error));
   }
 
-  function Form({
-    action = 'success',
-    children,
-    className,
-    name = 'contact_form',
-  }) {
-    return (
-      <form
-        data-netlify-honeypot="bot-field"
-        data-netlify="true"
-        onSubmit={handleSubmit}
-        action={action}
-        className={className}
-        method="POST"
-        name={name}
-      >
-        {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-        <input type="hidden" name="form-name" value="contact" />
-        <div hidden>
-          <label htmlFor="bot-field">
-            Don’t fill this out:{' '}
-            <input id="bot-field" name="bot-field" onChange={handleChange} />
-          </label>
-        </div>
-        {children}
-      </form>
-    );
-  }
-
-  Form.propTypes = {
-    action: PropTypes.string,
-    children: PropTypes.node.isRequired,
-    className: PropTypes.string,
-    name: PropTypes.string,
-  };
-  return { Form, handleChange, state };
+  return { handleSubmit, handleChange, state };
 }

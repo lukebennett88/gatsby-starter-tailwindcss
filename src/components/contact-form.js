@@ -1,10 +1,10 @@
 import React from 'react';
 
 import { useForm } from '../hooks';
-import { Input, TextArea } from './form-elements';
+import { Form, Input, TextArea } from './form-elements';
 
 export function ContactForm() {
-  const { state, handleChange, Form } = useForm({
+  const { state, handleSubmit, handleChange } = useForm({
     first_name: '',
     last_name: '',
     email_address: '',
@@ -13,7 +13,7 @@ export function ContactForm() {
   });
 
   return (
-    <Form action="/success/" name="contact-form">
+    <Form action="/success/" handleSubmit={handleSubmit}>
       <div className="md:grid md:grid-cols-3 md:gap-6">
         <div className="md:col-span-1">
           <h3 className="text-lg font-medium leading-6 text-gray-900">
