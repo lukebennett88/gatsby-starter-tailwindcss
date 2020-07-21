@@ -12,13 +12,6 @@ export function useGraphQL() {
   const data = useStaticQuery(
     graphql`
       {
-        allSiteNavigationJson {
-          nodes {
-            slug
-            id
-            label
-          }
-        }
         placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
           childImageSharp {
             fluid(maxWidth: 300) {

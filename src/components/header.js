@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
 
-import { useGraphQL } from '../hooks';
+import { mainNavigation } from '../data/site-navigation';
 import { Logo } from './vectors';
 import { MobileMenu } from './mobile-menu';
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const { allSiteNavigationJson } = useGraphQL();
   return (
     <nav className="sticky top-0 z-20 bg-white shadow">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -18,7 +17,7 @@ export function Header() {
             </Link>
           </div>
           <div className="hidden space-x-8 sm:ml-6 sm:flex">
-            {allSiteNavigationJson.nodes.map((node) => (
+            {mainNavigation.map((node) => (
               <Link
                 key={node.id}
                 to={node.slug}
