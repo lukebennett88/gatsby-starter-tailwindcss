@@ -5,7 +5,7 @@
 
 module.exports = {
   root: true,
-  extends: ['wesbos'],
+  extends: ['lukebennett'],
   rules: {
     'arrow-body-style': 0,
     'react/no-danger': 0,
