@@ -6,8 +6,10 @@ const resolveConfig = require('tailwindcss/resolveConfig');
 
 const tailwindConfig = require('./tailwind.config.js');
 
+// Get Tailwind values so we can use them in JS
 const fullConfig = resolveConfig(tailwindConfig);
 
+// Set up `dotenv` so that we can use `.env.development` and/or `.env.production` to store environment variables
 dotenv.config({
   path: `.env.${process.env.NODE_ENV}`,
 });
