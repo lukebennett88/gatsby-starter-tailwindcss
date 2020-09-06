@@ -1,3 +1,23 @@
+/**
+ * See https://usehooks.com/useOnClickOutside/ for details
+ *
+ * Example of how to use this hook:
+ *
+ * import { useOnClickOutside } from '../hooks';
+ *
+ *  // Create a ref that we add to the element
+ *  // for which we want to detect * outside clicks
+ *  const ref = useRef();
+ *
+ * // Function that gets called when we click outside of the ref
+ * function handleClose() {
+ *    setMobileMenuOpen(false);
+ *  }
+ *
+ *  // Call hook passing in the ref and a function to call on outside click
+ *  useOnClickOutside(ref, handleClose);
+ */
+
 import { useEffect } from 'react';
 
 function useOnClickOutside(ref, handler) {
