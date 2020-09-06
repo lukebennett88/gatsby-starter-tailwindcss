@@ -30,7 +30,7 @@ function Footer() {
             <a
               key={node.id}
               href={node.url}
-              className="text-gray-400 transition duration-150 ease-in-out hover:text-gray-500"
+              className="text-gray-400 transition duration-150 ease-in-out hover:text-gray-500 focus:text-gray-500 focus:shadow-none"
             >
               <span className="sr-only">{node.label}</span>
               <node.icon className="w-6 h-6" />
