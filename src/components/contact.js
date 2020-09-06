@@ -17,18 +17,7 @@ function Contact() {
 
   return (
     <article className="relative overflow-hidden bg-white">
-      <div
-        aria-hidden
-        className="absolute inset-0 flex w-1/3 w-full h-full overflow-hidden"
-      >
-        <div className="w-1/2 bg-brand-pink">
-          <div className="h-full transform -skew-x-12 bg-brand-pink" />
-        </div>
-        <div className="w-1/2 bg-brand-blue">
-          <div className="h-full transform -skew-x-12 bg-brand-blue" />
-        </div>
-      </div>
-      <div className="relative max-w-xl px-4 py-12 mx-auto lg:my-12 bg-gray-50 sm:px-6 lg:px-8">
+      <div className="relative max-w-xl px-4 py-12 mx-auto bg-gray-50 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="h2">Get in touch with our team</h2>
         </div>
