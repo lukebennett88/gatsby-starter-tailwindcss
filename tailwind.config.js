@@ -1,6 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 const tailwindUI = require('@tailwindcss/ui');
 
+// See https://tailwindcss.com/docs/configuration for details
 module.exports = {
   purge: ['./src/**/*.js'],
   theme: {
@@ -10,10 +11,9 @@ module.exports = {
       },
     },
   },
-  variants: { margin: ['responsive', 'first'] },
+  variants: {},
   plugins: [
-    tailwindUI({
-      layout: 'sidebar',
-    }),
+    // See https://tailwindui.com/documentation for details
+    tailwindUI,
   ],
 };
