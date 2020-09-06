@@ -31,7 +31,6 @@ module.exports = {
     'gatsby-plugin-robots-txt',
     'gatsby-plugin-sharp',
     'gatsby-plugin-sitemap',
-    'gatsby-transformer-json',
     'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-plugin-canonical-urls',
@@ -59,13 +58,6 @@ module.exports = {
           tailwindcss(tailwindConfig),
           autoprefixer,
         ],
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'data',
-        path: 'src/data',
       },
     },
     {
