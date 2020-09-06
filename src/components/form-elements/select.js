@@ -15,7 +15,7 @@ export function Select({ id, label, options, setIndex, setItemsToShow }) {
           }}
           defaultValue={label}
           id={id}
-          className="block w-full transition duration-150 ease-in-out rounded-none form-select sm:text-sm sm:leading-5 focus:outline-none focus:shadow-outline-primary focus:border-primary-light"
+          className="block w-full transition duration-150 ease-in-out rounded-none form-select sm:text-sm sm:leading-5"
         >
           {options.map((option) => (
             <option key={option} value={option}>

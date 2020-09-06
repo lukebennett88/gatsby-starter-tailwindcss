@@ -20,3 +20,14 @@ body,
 body {
   @apply bg-teal-500;
 }
+
+/* Replace default focus styles */
+a:focus,
+button:focus {
+  @apply shadow-outline outline-none;
+}
+
+/* Style selected text */
+::selection {
+  @apply text-white bg-teal-700;
+}

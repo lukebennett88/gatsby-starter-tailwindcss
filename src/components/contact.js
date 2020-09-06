@@ -19,7 +19,7 @@ function Contact() {
     <article className="relative overflow-hidden bg-white">
       <div className="relative max-w-xl px-4 py-12 mx-auto bg-gray-50 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="h2">Get in touch with our team</h2>
+          <h2>Get in touch with our team</h2>
         </div>
         <div className="mt-12">
           <Form
@@ -77,7 +77,7 @@ function Contact() {
                     By selecting this, you agree to the{' '}
                     <Link
                       to="/privacy-policy/"
-                      className="font-medium text-gray-700 underline focus:outline-none focus:shadow-outline-primary"
+                      className="font-medium text-gray-700 underline"
                     >
                       Privacy Policy
                     </Link>
@@ -90,7 +90,7 @@ function Contact() {
               <span className="inline-flex w-full shadow-sm">
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center w-full px-6 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-gray-800 border border-transparent rounded-none hover:bg-gray-700 focus:outline-none focus:border-gray-900 focus:shadow-outline-primary active:bg-gray-900"
+                  className="inline-flex items-center justify-center w-full px-6 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-gray-800 border border-transparent rounded-none hover:bg-gray-700 focus:border-gray-900 active:bg-gray-900"
                 >
                   Submit
                 </button>

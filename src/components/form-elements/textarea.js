@@ -25,7 +25,7 @@ export function TextArea({
           value={value}
           required={required}
           onChange={handleChange}
-          className="block w-full px-4 py-3 transition duration-150 ease-in-out rounded-none form-textarea focus:outline-none focus:shadow-outline-primary focus:border-primary-light"
+          className="block w-full px-4 py-3 transition duration-150 ease-in-out rounded-none form-textarea"
         />
       </div>
     </div>

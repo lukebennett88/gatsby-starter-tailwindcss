@@ -28,7 +28,7 @@ export function CheckBox() {
         aria-checked={isChecked}
         className={`${
           isChecked ? 'bg-gray-800' : 'bg-gray-200'
-        } relative flex-shrink-0 inline-block h-6 transition duration-200 ease-in-out border-2 border-transparent rounded-full cursor-pointer w-11 focus:outline-none focus:shadow-outline-gray`}
+        } relative flex-shrink-0 inline-block h-6 transition duration-200 ease-in-out border-2 border-transparent rounded-full cursor-pointer w-11`}
       >
         <span
           aria-hidden="true"

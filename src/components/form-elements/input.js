@@ -26,7 +26,7 @@ export function Input({
           value={value}
           required={required}
           onChange={handleChange}
-          className="block w-full px-4 py-3 transition duration-150 ease-in-out rounded-none form-input focus:outline-none focus:shadow-outline-primary focus:border-primary-light"
+          className="block w-full px-4 py-3 transition duration-150 ease-in-out rounded-none form-input"
         />
       </div>
     </div>
