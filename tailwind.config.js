@@ -5,6 +5,11 @@ const typography = require('@tailwindcss/typography');
 // See https://tailwindcss.com/docs/configuration for details
 module.exports = {
   purge: ['./src/**/*.js'],
+  future: {
+    removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true,
+  },
+  experimental: 'all',
   theme: {
     extend: {
       fontFamily: {
