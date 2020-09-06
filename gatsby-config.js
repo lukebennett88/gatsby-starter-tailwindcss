@@ -14,12 +14,16 @@ dotenv.config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
+// Declare variables so these values can be reused
+const title = 'Gatsby Starter Tailwind';
+const siteUrl = 'https://gatsby-starter-tailwindcss.netlify.com';
+
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Starter Tailwind',
+    title,
     description: 'Gatsby starter styled with Tailwind.',
     author: '@luke_bennett_',
-    siteUrl: 'https://gatsby-starter-tailwindcss.netlify.com',
+    siteUrl,
   },
   plugins: [
     'gatsby-plugin-netlify',
@@ -32,7 +36,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: 'https://gatsby-starter-tailwindcss.netlify.com',
+        siteUrl,
       },
     },
     {
