@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
 
-import { mainNavigation } from '../data/site-navigation';
+import { mainNavigation } from '../data';
 import { Logo } from './vectors';
 import { MobileMenu } from './mobile-menu';
 

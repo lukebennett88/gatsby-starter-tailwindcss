@@ -5,7 +5,7 @@ import { DialogOverlay, DialogContent } from '@reach/dialog';
 
 import { Link } from 'gatsby';
 import { Logo } from './vectors';
-import { mainNavigation } from '../data/site-navigation';
+import { mainNavigation } from '../data';
 
 function MobileMenu({ isOpen, setIsOpen }) {
   const AnimatedDialogOverlay = animated(DialogOverlay);

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 import { useGraphQL } from '../hooks';
-import { footerNavigation, socialLinks } from '../data/site-navigation';
+import { footerNavigation, socialLinks } from '../data';
 
 function Footer() {
   const {
