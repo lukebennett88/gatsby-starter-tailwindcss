@@ -8,7 +8,7 @@
   --reach-dialog: 1;
 }
 
-/* Used to prevent content being hidden behind bottom menu controls on mobile Safari */
+/* See https://piccalil.li/quick-tip/a-safer-way-to-vertically-fill-the-viewport/ for details */
 html,
 body,
 #___gatsby,
