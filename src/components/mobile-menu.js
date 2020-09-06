@@ -36,7 +36,7 @@ function MobileMenu({ isOpen, setIsOpen }) {
           key={key}
           onClick={() => setIsOpen(false)}
           style={{ opacity: styles.opacity }}
-          className="fixed absolute inset-0 z-40 md:hidden"
+          className="fixed inset-0 z-40 md:hidden"
         >
           <div className="fixed inset-0 z-40 flex justify-end bg-gray-600 bg-opacity-75">
             <AnimatedDialogContent
