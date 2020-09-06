@@ -2,7 +2,6 @@ const dotenv = require('dotenv');
 const postCssImport = require('postcss-import');
 const tailwindcss = require('tailwindcss');
 const autoprefixer = require('autoprefixer');
-const cssnano = require('cssnano');
 const resolveConfig = require('tailwindcss/resolveConfig');
 
 const tailwindConfig = require('./tailwind.config.js');
@@ -53,7 +52,6 @@ module.exports = {
           postCssImport,
           tailwindcss(tailwindConfig),
           autoprefixer,
-          ...(process.env.NODE_ENV === 'production' ? [cssnano] : []),
         ],
       },
     },
