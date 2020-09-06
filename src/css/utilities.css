@@ -1,3 +1,10 @@
 /**
  * Utility classes
  */
+
+@responsive {
+  /* Used to prevent content being hidden behind bottom menu controls on mobile Safari */
+  .fill-available {
+    min-height: -webkit-fill-available;
+  }
+}

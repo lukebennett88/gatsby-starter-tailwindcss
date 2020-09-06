@@ -8,6 +8,15 @@
   --reach-dialog: 1;
 }
 
+/* Used to prevent content being hidden behind bottom menu controls on mobile Safari */
+html,
+body,
+#___gatsby,
+#gatsby-focus-wrapper {
+  height: -webkit-fill-available;
+}
+
+/* Add a background colour so that when you overscroll (iOS and macOS) you can see the colour underneath */
 body {
   @apply bg-teal-500;
 }
