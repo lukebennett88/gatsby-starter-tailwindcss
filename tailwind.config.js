@@ -17,7 +17,11 @@ module.exports = {
       },
     },
   },
-  variants: {},
+  // Default values here: https://tailwindcss.com/docs/pseudo-class-variants#default-variants-reference
+  variants: {
+    borderColor: ['responsive', 'hover', 'focus', 'group-focus'],
+    boxShadow: ['responsive', 'hover', 'focus', 'group-focus'],
+  },
   plugins: [
     // See https://tailwindui.com/documentation for details
     tailwindUI,
