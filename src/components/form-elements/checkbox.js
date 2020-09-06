@@ -1,42 +1,42 @@
-import React, { useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import { useEventListener } from '../../hooks';
+import { Error } from './error';
 
-export function CheckBox() {
-  const [isChecked, setChecked] = useState(false);
-
-  const isBrowser = typeof window !== 'undefined';
-
-  function handleKeydown(e) {
-    if (e.keyCode === 32) {
-      e.preventDefault();
-      setChecked(!isChecked);
-    }
-  }
-
-  useEventListener('keydown', handleKeydown, {
-    target: isBrowser ? document : null,
-  });
-
+function Checkbox({ label, name, required = true, register, errors }) {
   return (
-    <div className="flex-shrink-0">
-      <span
-        role="checkbox"
-        tabIndex="0"
-        onClick={() => setChecked(!isChecked)}
-        onKeyDown={(e) => handleKeydown(e)}
-        aria-checked={isChecked}
-        className={`${
-          isChecked ? 'bg-gray-800' : 'bg-gray-200'
-        } relative flex-shrink-0 inline-block h-6 transition duration-200 ease-in-out border-2 border-transparent rounded-full cursor-pointer w-11`}
-      >
-        <span
-          aria-hidden="true"
-          className={`${
-            isChecked ? 'translate-x-0' : 'translate-x-5'
-          } inline-block w-5 h-5 transition duration-200 ease-in-out transform bg-white rounded-full shadow`}
-        />
-      </span>
+    <div className="sm:col-span-2">
+      <div className="flex items-start">
+        <label htmlFor={name} className="flex items-center space-x-2">
+          <input
+            type="checkbox"
+            name={name}
+            id={name}
+            aria-invalid={!!errors[name]}
+            ref={register({
+              required: required && (
+                <Error message="You must agree to the privacy policy" />
+              ),
+            })}
+            className="form-checkbox"
+          />
+          <span className="text-sm font-medium leading-5 text-gray-700">
+            {label}
+            {required && ' *'}
+          </span>
+        </label>
+      </div>
+      {errors[name]?.message}
     </div>
   );
 }
+
+Checkbox.propTypes = {
+  errors: PropTypes.object,
+  label: PropTypes.object.isRequired,
+  name: PropTypes.string.isRequired,
+  register: PropTypes.func.isRequired,
+  required: PropTypes.bool,
+};
+
+export { Checkbox };

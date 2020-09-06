@@ -1,19 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'gatsby';
+import { useForm } from 'react-hook-form';
 
-import { useForm } from '../hooks';
-import { Form, Input, TextArea, CheckBox } from './form-elements';
+import {
+  NetlifyForm,
+  Input,
+  TextArea,
+  Checkbox,
+  Select,
+} from './form-elements';
 
 function Contact() {
-  const { state, handleSubmit, handleChange } = useForm({
-    first_name: '',
-    last_name: '',
-    email: '',
-    phone_number: '',
-    subject: '',
-    message: '',
-    agree_to_privacy_policy: false,
-  });
+  const { register, handleSubmit, errors } = useForm({ mode: 'onBlur' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   return (
     <article className="relative overflow-hidden bg-white">
@@ -24,81 +23,84 @@ function Contact() {
           </h2>
         </div>
         <div className="mt-12">
-          <Form
-            onSubmit={handleSubmit}
-            action="/success/"
-            name="contact-form"
-            className="grid grid-cols-1 row-gap-6 sm:grid-cols-2 sm:col-gap-8"
+          <NetlifyForm
+            handleSubmit={handleSubmit}
+            setIsSubmitting={setIsSubmitting}
+            className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
           >
             <Input
               name="first_name"
               label="First name"
-              value={state.first_name}
-              handleChange={handleChange}
+              register={register}
+              errors={errors}
             />
             <Input
               name="last_name"
               label="Last name"
-              value={state.last_name}
-              handleChange={handleChange}
+              register={register}
+              errors={errors}
             />
             <Input
               name="email"
               label="Email"
               type="email"
               isFullWidth
-              value={state.email}
-              handleChange={handleChange}
+              register={register}
+              errors={errors}
             />
             <Input
               name="phone_number"
               label="Phone number"
               type="tel"
               isFullWidth
-              value={state.phone_number}
-              handleChange={handleChange}
+              register={register}
+              errors={errors}
             />
-            <Input
+            <Select
               name="subject"
               label="Subject"
+              defaultValue="Please choose:"
+              options={['First option', 'Second option', 'Third option']}
               isFullWidth
-              value={state.subject}
-              handleChange={handleChange}
+              register={register}
+              errors={errors}
             />
             <TextArea
               name="message"
               label="Message"
-              value={state.message}
-              handleChange={handleChange}
+              register={register}
+              errors={errors}
             />
-            <div className="sm:col-span-2">
-              <div className="flex items-start">
-                <CheckBox />
-                <div className="ml-3">
-                  <p className="text-base leading-6 text-gray-500">
-                    By selecting this, you agree to the{' '}
-                    <Link
-                      to="/privacy-policy/"
-                      className="font-medium text-gray-700 underline"
-                    >
-                      Privacy Policy
-                    </Link>
-                    .
-                  </p>
-                </div>
-              </div>
-            </div>
+            <Checkbox
+              name="agrees_to_privacy_policy"
+              label={
+                <>
+                  By selecting this, you agree to the{' '}
+                  <Link
+                    to="/privacy-policy/"
+                    className="inline-block underline"
+                  >
+                    Privacy Policy
+                  </Link>
+                </>
+              }
+              register={register}
+              errors={errors}
+            />
             <div className="sm:col-span-2">
               <span className="inline-flex w-full shadow-sm">
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center w-full px-6 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-gray-800 border border-transparent rounded-none hover:bg-gray-700 focus:border-gray-900 active:bg-gray-900"
+                  disabled={isSubmitting}
+                  className={`inline-flex items-center justify-center w-full px-6 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-gray-800 border border-transparent rounded-none hover:bg-gray-700 focus:border-gray-900 active:bg-gray-900 ${
+                    isSubmitting ? 'opacity-50 cursor-wait' : ''
+                  }`}
                 >
                   Submit
                 </button>
               </span>
             </div>
-          </Form>
+          </NetlifyForm>
         </div>
       </div>
     </article>
