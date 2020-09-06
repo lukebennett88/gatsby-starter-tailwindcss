@@ -12,7 +12,7 @@ import { Header } from './header';
 import { Sidebar } from './sidebar';
 import { Footer } from './footer';
 
-export function Layout({ children }) {
+function Layout({ children }) {
   return (
     <div className="flex flex-col min-h-screen bg-white border-t-4 border-teal-500">
       <Header />
@@ -30,3 +30,5 @@ export function Layout({ children }) {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 };
+
+export { Layout };

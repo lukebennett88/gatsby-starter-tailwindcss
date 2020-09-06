@@ -7,7 +7,7 @@ import { Link } from 'gatsby';
 import { Logo } from './vectors';
 import { mainNavigation } from '../data/site-navigation';
 
-export function MobileMenu({ isOpen, setIsOpen }) {
+function MobileMenu({ isOpen, setIsOpen }) {
   const AnimatedDialogOverlay = animated(DialogOverlay);
   const AnimatedDialogContent = animated(DialogContent);
 
@@ -102,3 +102,5 @@ MobileMenu.propTypes = {
   isOpen: PropTypes.bool,
   setIsOpen: PropTypes.func,
 };
+
+export { MobileMenu };

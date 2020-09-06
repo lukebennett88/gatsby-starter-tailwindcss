@@ -5,7 +5,7 @@ import { mainNavigation } from '../data/site-navigation';
 import { Logo } from './vectors';
 import { MobileMenu } from './mobile-menu';
 
-export function Header() {
+function Header() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <nav className="sticky top-0 z-20 bg-white shadow">
@@ -75,3 +75,5 @@ export function Header() {
     </nav>
   );
 }
+
+export { Header };

@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react';
 
-export function useEventListener(
+function useEventListener(
   eventType,
   handler,
   { enabled = true, target = document } = {}
@@ -26,3 +26,5 @@ export function useEventListener(
     };
   }, [eventType, enabled, target]);
 }
+
+export { useEventListener };

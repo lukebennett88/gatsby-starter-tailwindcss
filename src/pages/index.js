@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Layout, SEO, Contact } from '../components';
 
-export default function IndexPage() {
+function IndexPage() {
   return (
     <Layout>
       <SEO title="Home" />
@@ -10,3 +10,5 @@ export default function IndexPage() {
     </Layout>
   );
 }
+
+export default IndexPage;

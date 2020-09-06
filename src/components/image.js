@@ -14,8 +14,10 @@ import Image from 'gatsby-image';
 
 import { useGraphQL } from '../hooks';
 
-export function PlaceholderImage() {
+function PlaceholderImage() {
   const { placeholderImage } = useGraphQL();
 
   return <Image fluid={placeholderImage.childImageSharp.fluid} />;
 }
+
+export { PlaceholderImage };

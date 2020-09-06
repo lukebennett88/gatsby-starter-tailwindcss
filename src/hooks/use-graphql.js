@@ -8,7 +8,7 @@
 
 import { graphql, useStaticQuery } from 'gatsby';
 
-export function useGraphQL() {
+function useGraphQL() {
   const data = useStaticQuery(
     graphql`
       {
@@ -29,3 +29,5 @@ export function useGraphQL() {
   );
   return data;
 }
+
+export { useGraphQL };

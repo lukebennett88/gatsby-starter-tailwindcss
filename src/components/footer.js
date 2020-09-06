@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import { useGraphQL } from '../hooks';
 import { footerNavigation, socialLinks } from '../data/site-navigation';
 
-export function Footer() {
+function Footer() {
   const {
     site: {
       siteMetadata: { title },
@@ -46,3 +46,5 @@ export function Footer() {
     </footer>
   );
 }
+
+export { Footer };

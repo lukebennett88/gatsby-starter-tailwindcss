@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function Sidebar() {
+function Sidebar() {
   return (
     <div className="hidden lg:block">
       <aside className="sticky p-8 rounded-lg top-28 bg-gray-50">
@@ -99,3 +99,5 @@ export function Sidebar() {
     </div>
   );
 }
+
+export { Sidebar };

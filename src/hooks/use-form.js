@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { navigate } from 'gatsby';
 
-export function useForm(initialState) {
+function useForm(initialState) {
   function encode(data) {
     return Object.keys(data)
       .map(
@@ -33,3 +33,5 @@ export function useForm(initialState) {
 
   return { handleSubmit, handleChange, state };
 }
+
+export { useForm };

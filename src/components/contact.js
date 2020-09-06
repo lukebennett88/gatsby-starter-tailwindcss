@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import { useForm } from '../hooks';
 import { Form, Input, TextArea, CheckBox } from './form-elements';
 
-export function Contact() {
+function Contact() {
   const { state, handleSubmit, handleChange } = useForm({
     first_name: '',
     last_name: '',
@@ -113,3 +113,5 @@ export function Contact() {
     </article>
   );
 }
+
+export { Contact };
