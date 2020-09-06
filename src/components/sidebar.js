@@ -89,7 +89,7 @@ function Sidebar() {
           <div className="py-4">
             <a
               href="https://apply.workable.com/tailwind-ui/j/E129989EC6/apply/"
-              className="inline-block rounded-md bg-gray-900 px-4 py-2.5 text-base leading-6 font-semibold text-white"
+              className="inline-block rounded-none bg-gray-800 px-4 py-2.5 text-base leading-6 font-semibold text-white focus:border-gray-900 hover:bg-gray-700 active:bg-gray-900"
             >
               Apply for this job
             </a>
