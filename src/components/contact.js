@@ -19,7 +19,9 @@ function Contact() {
     <article className="relative overflow-hidden bg-white">
       <div className="relative max-w-xl px-4 py-12 mx-auto bg-gray-50 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2>Get in touch with our team</h2>
+          <h2 className="text-3xl font-bold text-center text-gray-900">
+            Get in touch with our team
+          </h2>
         </div>
         <div className="mt-12">
           <Form
