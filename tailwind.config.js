@@ -1,6 +1,6 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 const tailwindUI = require('@tailwindcss/ui');
-const typography = require('@tailwindcss/typography');
+const aspectRatio = require('@tailwindcss/aspect-ratio');
 
 // See https://tailwindcss.com/docs/configuration for details
 module.exports = {
@@ -24,8 +24,12 @@ module.exports = {
   },
   plugins: [
     // See https://tailwindui.com/documentation for details
+
+    // Tailwind UI comes bundled with the Typography plugin
+    // Here are the docs:
+    // https://github.com/tailwindlabs/tailwindcss-typography
     tailwindUI,
-    // See https://github.com/tailwindlabs/tailwindcss-typography for details
-    typography,
+    // See https://github.com/tailwindlabs/tailwindcss-aspect-ratio#readme for details
+    aspectRatio,
   ],
 };
